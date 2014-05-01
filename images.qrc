@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icon.png</file>
+        <file>edit.png</file>
+        <file>delete.png</file>
+        <file>new_game.png</file>
+        <file>copy.png</file>
+    </qresource>
+</RCC>
