@@ -49,6 +49,7 @@ private slots:
     void onResult(QNetworkReply *reply);
     void deleteDeck(DeckWidget *widget, QJsonObject &deck);
     void editDeck(DeckWidget *widget, QJsonObject &deck);
+    void on_actionExit_triggered();
 };
 
 #endif // MAINWINDOW_H

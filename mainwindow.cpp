@@ -240,3 +240,8 @@ void MainWindow::on_actionReloadCardData_triggered()
         return;
     }
 }
+
+void MainWindow::on_actionExit_triggered()
+{
+    this->close();
+}
