@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>528</width>
-    <height>758</height>
+    <width>538</width>
+    <height>774</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>175</height>
+       <height>250</height>
       </size>
      </property>
      <property name="title">
@@ -382,13 +382,13 @@
           <widget class="QPushButton" name="pushButtonSortAz">
            <property name="minimumSize">
             <size>
-             <width>30</width>
+             <width>60</width>
              <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>40</width>
+             <width>60</width>
              <height>16777215</height>
             </size>
            </property>
@@ -404,13 +404,13 @@
           <widget class="QPushButton" name="pushButtonSortCost">
            <property name="minimumSize">
             <size>
-             <width>40</width>
+             <width>60</width>
              <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>40</width>
+             <width>60</width>
              <height>16777215</height>
             </size>
            </property>

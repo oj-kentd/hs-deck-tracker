@@ -40,7 +40,7 @@ void ActiveDeck::loadCards()
         item->setData(Qt::UserRole, name);
 
         CardWidget *widget = new CardWidget(card);
-        connect(widget, SIGNAL(updateCardArt(QImage&)), this, SLOT(updateCardLabel(QImage&)));
+        connect(widget, SIGNAL(updateCardArt(const QImage&)), this, SLOT(updateCardLabel(const QImage&)));
         this->cards.insert(name, widget);
 
         item->setSizeHint(widget->minimumSizeHint());
@@ -220,7 +220,7 @@ void ActiveDeck::sortCards()
     ui->listWidgetCards->update();
 }
 
-void ActiveDeck::updateCardLabel(QImage &image)
+void ActiveDeck::updateCardLabel(const QImage &image)
 {
     if(image.isNull())
     {

@@ -12,7 +12,8 @@
 CardWidget::CardWidget(QJsonObject &card, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::CardWidget),
-    card(card)
+    card(card),
+    cardImage()
 {
     ui->setupUi(this);
     this->setName(card.value("name").toString());
@@ -61,7 +62,6 @@ void CardWidget::setCount(int count)
     this->count = count;
     QHBoxLayout *layout = new QHBoxLayout(ui->widgetButtonPlaceholder);
     layout->setMargin(0);
-    //ui->widgetButtonPlaceholder->setLayout(layout);
     for(int i = 0; i < count; i++)
     {
         QPushButton *button = new QPushButton(QString("%1").arg(i+1), this);
@@ -78,18 +78,11 @@ void CardWidget::loadCardImage()
     QString filename = name.replace(' ', '-').replace('\'', '-').toLower();
     this->imageFilename = filename + ".png";
     QDir dir(QStandardPaths::writableLocation(QStandardPaths::CacheLocation));
-    if(!dir.exists())
-    {
-        dir.mkpath(".");
-        dir.mkdir("card_images");
-    }
-    this->imagePath = dir.absolutePath() + QDir::separator() + "card_images" + QDir::separator();
+    this->imagePath = dir.absolutePath();
 
     QFile file(imagePath + imageFilename);
     if(file.exists())
     {
-        // Local Cache exists, set tooltip & return
-        //this->setToolTip("<html><img src=" + imagePath + imageFilename +"/></html>");
         return;
     }
 
@@ -115,8 +108,11 @@ void CardWidget::onResult(QNetworkReply *reply)
         return;
     }
 
-    //qDebug() << "Save Image: " << this->imageFilename;
-    image->save(imagePath + imageFilename);
+    qDebug() << "Save Image: " << imagePath + imageFilename;
+    if(!image->save(imagePath + imageFilename))
+    {
+        qWarning() << "Could not save card image to: " << QString(imagePath + imageFilename);
+    }
 
     //this->setToolTip("<html><img src=" + imagePath + imageFilename +"/></html>");
 }
@@ -191,15 +187,20 @@ const QJsonObject &CardWidget::getCardJson() const
     return card;
 }
 
-QImage CardWidget::getCardArt() const
+const QImage &CardWidget::getCardArt()
 {
-    QFile file(imagePath + imageFilename);
-    if(file.exists())
+    if(this->cardImage.isNull())
     {
-        // Local Cache exists, return image
-        return QImage(imagePath + imageFilename);
+        QFile file(imagePath + imageFilename);
+        qDebug() << file.fileName();
+        if(file.exists())
+        {
+
+            // Local Cache exists, return image
+            this->cardImage = QImage(imagePath + imageFilename);
+        }
     }
 
-    return QImage();
+    return cardImage;
 }
 

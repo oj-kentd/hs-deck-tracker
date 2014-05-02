@@ -24,11 +24,11 @@ public:
     int getActiveCardCount() const;
     const QJsonObject &getCardJson() const;
     double getPercent() const;
-    QImage getCardArt() const;
+    const QImage &getCardArt();
 
 signals:
     void cardClicked();
-    void updateCardArt(QImage &art);
+    void updateCardArt(const QImage &art);
 
 protected:
     void enterEvent(QEvent *event);
@@ -43,6 +43,7 @@ private:
     QString imagePath;
     int count;
     double percentage;
+    QImage cardImage;
 
     void setName(QString name);
     void setCost(int cost);

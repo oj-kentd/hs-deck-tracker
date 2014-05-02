@@ -31,7 +31,7 @@ private slots:
     void calculateStats();
     void resetDeck();
     void sortCards();
-    void updateCardLabel(QImage&);
+    void updateCardLabel(const QImage&);
 };
 
 #endif // ACTIVEDECK_H

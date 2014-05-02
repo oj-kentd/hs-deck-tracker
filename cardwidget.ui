@@ -30,10 +30,13 @@
     <number>3</number>
    </property>
    <property name="leftMargin">
-    <number>9</number>
+    <number>5</number>
    </property>
    <property name="topMargin">
     <number>1</number>
+   </property>
+   <property name="rightMargin">
+    <number>5</number>
    </property>
    <property name="bottomMargin">
     <number>1</number>
@@ -72,12 +75,12 @@
     <widget class="QLabel" name="labelPercent">
      <property name="minimumSize">
       <size>
-       <width>30</width>
+       <width>50</width>
        <height>0</height>
       </size>
      </property>
      <property name="text">
-      <string>30%</string>
+      <string>100.0%</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
