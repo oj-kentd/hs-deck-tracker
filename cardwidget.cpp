@@ -78,7 +78,7 @@ void CardWidget::loadCardImage()
     QString filename = name.replace(' ', '-').replace('\'', '-').toLower();
     this->imageFilename = filename + ".png";
     QDir dir(QStandardPaths::writableLocation(QStandardPaths::CacheLocation));
-    this->imagePath = dir.absolutePath();
+    this->imagePath = dir.absolutePath() + QDir::separator();
 
     QFile file(imagePath + imageFilename);
     if(file.exists())

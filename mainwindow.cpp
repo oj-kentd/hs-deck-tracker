@@ -127,7 +127,14 @@ void MainWindow::on_pushButtonNewDeck_clicked()
 
 void MainWindow::serializeDeckList()
 {
-    QFile saveFile(QStringLiteral("decks.json"));
+    QDir dir(QStandardPaths::writableLocation(QStandardPaths::CacheLocation));
+    if(!dir.exists())
+    {
+        dir.mkpath(".");
+    }
+
+    QString filename = "decks.json";
+    QFile saveFile(dir.absolutePath() + QDir::separator() + filename);
 
     if (!saveFile.open(QIODevice::WriteOnly))
     {
@@ -148,7 +155,9 @@ void MainWindow::serializeDeckList()
 
 void MainWindow::loadDeckList()
 {
-    QFile loadFile(QStringLiteral("decks.json"));
+    QDir dir(QStandardPaths::writableLocation(QStandardPaths::CacheLocation));
+    QString filename = "decks.json";
+    QFile loadFile(dir.absolutePath() + QDir::separator() + filename);
 
     if(!loadFile.exists())
     {
