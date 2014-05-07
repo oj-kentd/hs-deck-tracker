@@ -7,19 +7,34 @@
     <x>0</x>
     <y>0</y>
     <width>538</width>
-    <height>774</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Add New Deck</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
+  <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,1,0">
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <property name="topMargin">
+    <number>4</number>
+   </property>
+   <property name="bottomMargin">
+    <number>4</number>
+   </property>
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>250</height>
+       <height>175</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>175</height>
       </size>
      </property>
      <property name="title">
@@ -28,8 +43,14 @@
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="spacing">
+         <number>3</number>
+        </property>
         <item>
          <layout class="QGridLayout" name="gridLayout_4">
+          <property name="verticalSpacing">
+           <number>4</number>
+          </property>
           <item row="0" column="1">
            <widget class="QLineEdit" name="lineEditName">
             <property name="maximumSize">
@@ -95,6 +116,9 @@
         </item>
         <item>
          <layout class="QGridLayout" name="gridLayout" columnstretch="0,1">
+          <property name="verticalSpacing">
+           <number>4</number>
+          </property>
           <item row="3" column="1">
            <widget class="QLabel" name="labelWeapons">
             <property name="text">
@@ -170,6 +194,9 @@
       </item>
       <item>
        <layout class="QGridLayout" name="gridLayout_2">
+        <property name="verticalSpacing">
+         <number>4</number>
+        </property>
         <item row="0" column="5">
          <widget class="QProgressBar" name="progressBar5">
           <property name="maximum">
@@ -363,7 +390,7 @@
     </widget>
    </item>
    <item>
-    <layout class="QGridLayout" name="gridLayout_3">
+    <layout class="QGridLayout" name="gridLayout_3" rowstretch="0,1">
      <item row="0" column="0">
       <widget class="QLabel" name="label_6">
        <property name="text">
@@ -372,7 +399,7 @@
       </widget>
      </item>
      <item row="1" column="0">
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1">
        <property name="spacing">
         <number>0</number>
        </property>
@@ -442,7 +469,7 @@
          <property name="minimumSize">
           <size>
            <width>250</width>
-           <height>400</height>
+           <height>200</height>
           </size>
          </property>
          <property name="maximumSize">
@@ -470,25 +497,12 @@
        <property name="minimumSize">
         <size>
          <width>250</width>
-         <height>500</height>
+         <height>200</height>
         </size>
        </property>
       </widget>
      </item>
     </layout>
-   </item>
-   <item>
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
