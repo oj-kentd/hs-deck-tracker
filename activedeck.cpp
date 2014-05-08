@@ -193,7 +193,9 @@ void ActiveDeck::sortCards()
         else if(ui->pushButtonCost->isChecked())
         {
             int cost = widget->getCardJson().value("cost").toInt();
-            QString label = QString("%1 %2").arg(cost).arg(widget->getName());
+            QString label;
+            label.sprintf("%02d ", cost);
+            label.append(widget->getName());
             item->setData(Qt::DisplayRole, label);
         }
     }

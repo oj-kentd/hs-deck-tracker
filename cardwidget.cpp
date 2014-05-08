@@ -95,7 +95,7 @@ void CardWidget::onResult(QNetworkReply *reply)
 {
     if(reply->error() != QNetworkReply::NoError)
     {
-        qDebug() << "Error reading card image";
+        qWarning() << "Error reading card image";
         return;
     }
 
@@ -108,7 +108,7 @@ void CardWidget::onResult(QNetworkReply *reply)
         return;
     }
 
-    qDebug() << "Save Image: " << imagePath + imageFilename;
+    //qDebug() << "Save Image: " << imagePath + imageFilename;
     if(!image->save(imagePath + imageFilename))
     {
         qWarning() << "Could not save card image to: " << QString(imagePath + imageFilename);
@@ -192,10 +192,9 @@ const QImage &CardWidget::getCardArt()
     if(this->cardImage.isNull())
     {
         QFile file(imagePath + imageFilename);
-        qDebug() << file.fileName();
+        //qDebug() << file.fileName();
         if(file.exists())
         {
-
             // Local Cache exists, return image
             this->cardImage = QImage(imagePath + imageFilename);
         }

@@ -548,7 +548,9 @@ void NewDeckDialog::sortCards()
         }
         else if(ui->pushButtonSortCost->isChecked())
         {
-            QString label = QString("%1 %2").arg(cost).arg(name);
+            QString label;
+            label.sprintf("%02d ", cost);
+            label.append(name);
             item->setData(Qt::DisplayRole, label);
         }
     }
@@ -564,7 +566,9 @@ void NewDeckDialog::sortCards()
         }
         else if(ui->pushButtonSortCost->isChecked())
         {
-            QString label = QString("%1 %2").arg(cost).arg(name);
+            QString label;
+            label.sprintf("%02d ", cost);
+            label.append(name);
             item->setData(Qt::DisplayRole, label);
         }
     }

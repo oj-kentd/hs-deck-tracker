@@ -11,7 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = hs-deck-tracker
 TEMPLATE = app
 
-VERSION = 0.2
+VERSION = 0.3
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 DEFINES += QT_USE_QSTRINGBUILDER
 CONFIG(debug, debug|release):CONFIG += console
